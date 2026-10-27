@@ -1,0 +1,16 @@
+# Authorized targets ONLY. TaskManager refuses anything not listed here.
+# Add a target only after you have explicit authorization to test it.
+# For this project: local/lab targets only.
+
+targets:
+  - name: "OWASP Juice Shop (local)"
+    type: domain
+    value: "localhost:3000"
+    notes: "Docker: docker run -p 3000:3000 bkimminich/juice-shop"
+
+  - name: "Metasploitable2 (lab network)"
+    type: range
+    value: "192.168.56.0/24"   # adjust to your actual isolated lab subnet
+    notes: "Isolated hypervisor network only — never route this to the internet"
+
+# Anything not listed above is rejected by TaskManager.validate_target().

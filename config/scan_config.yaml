@@ -1,0 +1,9 @@
+# Default scan configuration. ScanPipeline loads this unless the caller
+# passes an explicit ScanConfig.
+modules:
+  - reconnaissance
+  - vulnerability_assessment
+  - web_fuzzing
+  - api_testing
+output_format: json
+scheduling: immediate
